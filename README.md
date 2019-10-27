@@ -31,4 +31,4 @@ You've had sprint planning, and this sprint there is 1 story, 1 bug, and 1 tech 
   + The grid was supposed to have a width of 60 and a height of 30, but after starting the application, the grid runs with a width of 30 and a height of 60
 
 - Tech Debt: Theres no unit tests, let's write some! 
-(this is nearly impossible, so don't waste much time on it, but do try to think about how you would even start this)
+(you don't actually need to do this, but do try to think about how you would do this, and if it would be easier than challenge 1)
