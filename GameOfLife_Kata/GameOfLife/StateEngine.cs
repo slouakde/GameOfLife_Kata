@@ -40,6 +40,23 @@ namespace GameOfLife_Kata.GameOfLife
             return newState;
         }
 
+        public static List<Tuple<int, int>> AddFizzBuzzGliders(List<Tuple<int, int>> CurrentState, string FizzBuzzResult)
+        {
+            switch (FizzBuzzResult)
+            {
+                case "Fizz":
+                    CurrentState.AddLeftGliderOne();
+                    break;
+                case "Buzz":
+                    CurrentState.AddLeftGliderTwo();
+                    break;
+                case "FizzBuzz":
+                    CurrentState.AddRightGliderOne();
+                    break;
+            }
+            return CurrentState;
+        }
+
         private static List<Tuple<int, int>> GetNeighbours(int x, int y)
         {
             var neighbours = new List<Tuple<int, int>>();

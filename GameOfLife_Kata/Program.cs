@@ -8,7 +8,6 @@ namespace GameOfLife_Kata
         static void Main(string[] args)
         {
             List<Tuple<int, int>> start = new List<Tuple<int, int>>();
-            start.AddRightGliderOne();
             Display.Display.DisplayWelcome(start);            
             var currentState = start;
 
@@ -20,9 +19,15 @@ namespace GameOfLife_Kata
                 {
                     Display.Display.ClearScreen();
 
-                    var FizzBuzzResult = FizzBuzz.FizzBuzzEngine.GetFizzBuzzResult(i);                    
+                    var fizzBuzzResult = FizzBuzz.FizzBuzzEngine.GetFizzBuzzResult(i);                    
                     currentState = GameOfLife.StateEngine.GetNewState(currentState);
-                    Display.Display.DisplayResult(FizzBuzzResult, currentState);
+
+                    if (j % 10 == 0)
+                    {
+                        currentState = GameOfLife.StateEngine.AddFizzBuzzGliders(currentState, fizzBuzzResult);
+                    }
+
+                    Display.Display.DisplayResult(fizzBuzzResult, currentState);
                                        
                     j++;
                     if (j % 10 == 0)

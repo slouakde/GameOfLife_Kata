@@ -28,9 +28,9 @@ namespace GameOfLife_Kata.Display
 
         public static void DisplayGameOfLifeGrid(List<Tuple<int, int>> GameOfLife)
         {
-            for (int x = 0; x < AppConstants.x_grid; x++)
+            for (int y = 0; y < AppConstants.y_grid; y++)
             {
-                for (int y = 0; y < AppConstants.y_grid; y++)
+                for (int x = 0; x < AppConstants.x_grid; x++)
                 {
                     if (GameOfLife.Contains(new Tuple<int, int>(x, y)))
                         Console.Write("X");
