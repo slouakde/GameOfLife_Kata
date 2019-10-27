@@ -51,7 +51,9 @@ namespace GameOfLife_Kata
                             Console.WriteLine("FizzBuzz");
                         }
                         else
+                        {
                             Console.WriteLine("Fizz");
+                        }
                     }
                     else
                     {
@@ -60,7 +62,9 @@ namespace GameOfLife_Kata
                             Console.WriteLine("Buzz");
                         }
                         else
+                        {
                             Console.WriteLine(i);
+                        }
                     }
 
                     var old_state = current_state;
@@ -113,7 +117,6 @@ namespace GameOfLife_Kata
                                 {
                                     current_state.Add(new Tuple<int, int>(x, y));
                                 }
-
                             }
                             else
                             {
