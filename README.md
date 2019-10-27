@@ -17,3 +17,9 @@ Based off of a combination of a game of life and fizz buzz, the rules are as fol
    + Every time "Fizz" is written, a glider is created travelling right from x: 2, y: 12
    + Every time "Buzz" is written, a glider is created travelling right from x: 11, y: 2
    + Every time "FizzBuzz" is written, a glider is created travelling left from x: 4, y: 36
+   
+There are 4 branches to look at :
+ Challenge-1 : Code is written poorly and some challenges are raised
+ Challenge-1-Solved : An example of the above being solved 
+ Challenge-2 : Code is written with more separation and layering, same challenges are raised
+ Challenge-2-Solved : An example of the above being solved 
