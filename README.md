@@ -23,12 +23,12 @@ You've had sprint planning, and this sprint there is 1 story, 1 bug, and 1 tech 
 
  - Story: Whenever the application writes Fizz, Buzz, or FizzBuzz, a new glider is introduced, but only on the first frame when it is written. 
  - The code for the Gliders has already been written. 
-  + For Fizz, Introduce LeftGliderOne
-  + For Buzz, Introduce LeftGliderTwo
-  + For FizzBuzz, Introduce RightGliderOne
+   + For Fizz, Introduce LeftGliderOne
+   + For Buzz, Introduce LeftGliderTwo
+   + For FizzBuzz, Introduce RightGliderOne
 
  - Bug: 
-  + The grid was supposed to have a width of 60 and a height of 30, but after starting the application, the grid runs with a width of 30 and a height of 60
+   + The grid was supposed to have a width of 60 and a height of 30, but after starting the application, the grid runs with a width of 30 and a height of 60
 
 - Tech Debt: Theres no unit tests, let's write some! 
 (you don't actually need to do this, but do try to think about how you would do this, and if it would be easier than challenge 1)
