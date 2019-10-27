@@ -5,11 +5,6 @@ namespace GameOfLife_Kata
 {
     class Program
     {
-        const int fizz = 3;
-        const int buzz = 5;
-        const int fizzbuzz = 15;
-
-
         static void Main(string[] args)
         {
             Console.SetWindowSize(60, 34);
@@ -50,9 +45,9 @@ namespace GameOfLife_Kata
                     Console.WriteLine("        ");
                     Console.SetCursorPosition(0, 0);
 
-                    if (i % fizz == 0)
+                    if (i % 3 == 0)
                     {
-                        if (i % buzz == 0)
+                        if (i % 5 == 0)
                         {
                             Console.WriteLine("FizzBuzz");
                         }
@@ -61,7 +56,7 @@ namespace GameOfLife_Kata
                     }
                     else
                     {
-                        if (i % buzz == 0)
+                        if (i % 5 == 0)
                         {
                             Console.WriteLine("Buzz");
                         }
@@ -74,17 +69,17 @@ namespace GameOfLife_Kata
 
                     if (j % 10 == 0)
                     {
-                        if (i % fizzbuzz == 0)
+                        if (i % 15 == 0)
                         {
                             AddRightGliderOne(current_state);
                         }
-                        else if (i % buzz == 0)
-                        {
-                            AddLeftGliderTwo(current_state);
-                        }
-                        else if (i % fizz == 0)
+                        else if (i % 3 == 0)
                         {
                             AddLeftGliderOne(current_state);
+                        }
+                        else if (i % 5 == 0)
+                        {
+                            AddLeftGliderTwo(current_state);
                         }
 
                     }
@@ -149,33 +144,38 @@ namespace GameOfLife_Kata
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
 
-
-
         private static void AddLeftGliderOne(List<Tuple<int, int>> state)
         {
-            state.AddPoint(1, 12);
-            state.AddPoint(2, 13);
-            state.AddPoint(3, 11);
-            state.AddPoint(3, 12);
-            state.AddPoint(3, 13);
+            AddLeftGlider(state, 2, 12);
         }
 
         private static void AddLeftGliderTwo(List<Tuple<int, int>> state)
         {
-            state.AddPoint(11, 2);
-            state.AddPoint(12, 3);
-            state.AddPoint(13, 1);
-            state.AddPoint(13, 2);
-            state.AddPoint(13, 3);
+            AddLeftGlider(state, 11, 2);
         }
 
         private static void AddRightGliderOne(List<Tuple<int, int>> state)
         {
-            state.AddPoint(1, 38);
-            state.AddPoint(2, 37);
-            state.AddPoint(3, 37);
-            state.AddPoint(3, 38);
-            state.AddPoint(3, 39);
+
+            AddRightGlider(state, 4, 36);
+        }
+
+        private static void AddLeftGlider(List<Tuple<int, int>> state, int x, int y)
+        {
+            state.AddPoint(x - 1, y);
+            state.AddPoint(x, y + 1);
+            state.AddPoint(x + 1, y - 1);
+            state.AddPoint(x + 1, y);
+            state.AddPoint(x + 1, y + 1);
+        }
+
+        private static void AddRightGlider(List<Tuple<int, int>> state, int x, int y)
+        {
+            state.AddPoint(x - 1, y);
+            state.AddPoint(x, y - 1);
+            state.AddPoint(x + 1, y - 1);
+            state.AddPoint(x + 1, y);
+            state.AddPoint(x + 1, y + 1);
         }
     }
 }
