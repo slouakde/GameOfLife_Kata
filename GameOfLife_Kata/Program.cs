@@ -17,6 +17,7 @@ namespace GameOfLife_Kata
             int y_grid = 30;
 
             List<Tuple<int, int>> start = new List<Tuple<int, int>>();
+            AddRightGliderOne(start);
 
             for (int y = 0; y < y_grid; y++)
             {
