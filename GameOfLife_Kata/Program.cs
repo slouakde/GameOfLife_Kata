@@ -13,14 +13,14 @@ namespace GameOfLife_Kata
             Console.WriteLine("Press ENTER to start");
             Console.WriteLine("Press ESC to stop");
 
-            int x_grid = 30;
-            int y_grid = 60;
+            int x_grid = 60;
+            int y_grid = 30;
 
             List<Tuple<int, int>> start = new List<Tuple<int, int>>();
 
-            for (int x = 0; x < x_grid; x++)
+            for (int y = 0; y < y_grid; y++)
             {
-                for (int y = 0; y < y_grid; y++)
+                for (int x = 0; x < x_grid; x++) 
                 {
                     if (start.Contains(new Tuple<int, int>(x, y)))
                         Console.Write("X");
@@ -83,9 +83,9 @@ namespace GameOfLife_Kata
 
                     }
 
-                    for (int x = 0; x < x_grid; x++)
+                    for (int y = 0; y < y_grid; y++) 
                     {
-                        for (int y = 0; y < y_grid; y++)
+                        for (int x = 0; x < x_grid; x++)
                         {
                             var neighbours = new List<Tuple<int, int>>();
                             neighbours.AddPoint(x + 1, y);
@@ -144,18 +144,18 @@ namespace GameOfLife_Kata
 
         private static void AddLeftGliderOne(List<Tuple<int, int>> state)
         {
-            AddLeftGlider(state, 2, 12);
+            AddLeftGlider(state, 12, 2);
         }
 
         private static void AddLeftGliderTwo(List<Tuple<int, int>> state)
         {
-            AddLeftGlider(state, 11, 2);
+            AddLeftGlider(state, 2, 11);
         }
 
         private static void AddRightGliderOne(List<Tuple<int, int>> state)
         {
 
-            AddRightGlider(state, 4, 36);
+            AddRightGlider(state, 36, 4);
         }
 
         private static void AddLeftGlider(List<Tuple<int, int>> state, int x, int y)
@@ -169,11 +169,11 @@ namespace GameOfLife_Kata
 
         private static void AddRightGlider(List<Tuple<int, int>> state, int x, int y)
         {
-            state.AddPoint(x - 1, y);
-            state.AddPoint(x, y - 1);
-            state.AddPoint(x + 1, y - 1);
             state.AddPoint(x + 1, y);
-            state.AddPoint(x + 1, y + 1);
+            state.AddPoint(x, y + 1);
+            state.AddPoint(x - 1, y - 1);
+            state.AddPoint(x - 1, y);
+            state.AddPoint(x - 1, y + 1);
         }
     }
 }
