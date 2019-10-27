@@ -12,4 +12,8 @@ Based off of a combination of a game of life and fizz buzz, the rules are as fol
    + For every Multiple of 3 write Fizz 
    + For every Multiple of 5 write Buzz 
    + For every Multiple of 3 and 5 write FizzBuzz
-   +  Otherwise write the FizzBuzz counters current number
+   + Otherwise write the FizzBuzz counters current number
+ - In addition : 
+   + Every time "Fizz" is written, a glider is created travelling right from x: 2, y: 12
+   + Every time "Buzz" is written, a glider is created travelling right from x: 11, y: 2
+   + Every time "FizzBuzz" is written, a glider is created travelling left from x: 4, y: 36
