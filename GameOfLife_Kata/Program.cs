@@ -85,7 +85,6 @@ namespace GameOfLife_Kata
 
                     for (int x = 0; x < x_grid; x++)
                     {
-                        //Swap this round to fix but leave out of the puzzle -- intentional bug
                         for (int y = 0; y < y_grid; y++)
                         {
                             var neighbours = new List<Tuple<int, int>>();
