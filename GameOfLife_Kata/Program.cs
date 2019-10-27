@@ -69,10 +69,33 @@ namespace GameOfLife_Kata
 
                     var old_state = current_state;
                     current_state = new List<Tuple<int, int>>();
-                    
-                    for (int x = 0; x < x_grid; x++) 
+
+                    if (j % 10 == 0)
                     {
-                        for (int y = 0; y < y_grid; y++)
+                        if (i % 3 == 0)
+                        {
+                            if (i % 5 == 0)
+                            {
+                                AddRightGliderOne(current_state);
+                            }
+                            else
+                            {
+                                AddLeftGliderOne(current_state);
+                            }
+                        }
+                        else
+                        {
+                            if (i % 5 == 0)
+                            {
+                                AddLeftGliderTwo(current_state);
+                            }
+                        }
+
+                    }
+
+                    for (int y = 0; y < y_grid; y++)
+                    {
+                        for (int x = 0; x < x_grid; x++) 
                         {
                             var neighbours = new List<Tuple<int, int>>();
                             neighbours.AddPoint(x + 1, y);
