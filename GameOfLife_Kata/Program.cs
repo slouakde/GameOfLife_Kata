@@ -17,6 +17,8 @@ namespace GameOfLife_Kata
             int y_grid = 30;
 
             List<Tuple<int, int>> start = new List<Tuple<int, int>>();
+            //Comment line below, or comment lines 75-90
+            AddRightGliderOne(start);
 
             for (int y = 0; y < y_grid; y++)
             {
@@ -29,7 +31,6 @@ namespace GameOfLife_Kata
                 }
                 Console.WriteLine();
             };
-
             var current_state = start;
             Console.ReadLine();
             Console.Clear();
@@ -70,6 +71,7 @@ namespace GameOfLife_Kata
                     var old_state = current_state;
                     current_state = new List<Tuple<int, int>>();
 
+                    //Comment lines below (75-90), or comment line 21
                     if (j % 10 == 0)
                     {
                         if (i % 15 == 0)
